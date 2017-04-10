@@ -1,0 +1,54 @@
+curl -XPUT 'localhost:9200/redis_monitoring?pretty' -H 'Content-Type: application/json' -d'
+  {
+    "mappings": {
+      "data" : {
+        "properties" : {
+          "HIT_RATIO" : {
+            "type" :    "float"
+          },
+          "DATETIME" : {
+            "type" :   "date",
+            "format": "strict_date_optional_time||epoch_millis"
+          },
+          "MEM_FRAGMENTATION_RATIO" : {
+            "type" :   "float"
+          },
+          "USED_MEMORY" : {
+            "type" :   "long"
+          },
+          "USED_MEMORY_HUMAN" : {
+            "type" :   "long"
+          },
+          "EVICTED_KEYS" : {
+            "type" :   "long"
+          },
+          "INSTANTANEOUS_OPS_PER_SEC" : { 
+            "type" : "long"
+          },
+          "THROUGHPUT": {
+            "type": "long"
+          },
+          "TOTAL_KEYS" : { 
+            "type" : "long"
+          }
+          ,
+          "PEAK_MEMORY" : { 
+            "type" : "long"
+          } ,
+          "CONNECTED_CLIENTS" : { 
+            "type" : "long"
+          },
+          "REJECTED_CONNECTIONS": {
+              "type": "long"
+          },
+          "KEY_MISS": {
+              "type": "long"
+          },
+           "BLOCKED_CLIENTS": {
+              "type": "long"
+          }
+        }
+      }
+    }
+  }
+  '
